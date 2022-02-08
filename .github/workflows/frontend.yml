@@ -34,6 +34,6 @@ jobs:
 
       - run: composer update --prefer-dist
 #       - run: yarn upgrade node-sass@4.14.1
-      - run: yarn install
+      - run: npm install # yarn install
 
-      - run: yarn run ${{ matrix.script }}
+      - run: npm run ${{ matrix.script }} # yarn run ${{ matrix.script }}
