@@ -19,23 +19,20 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.1'
-          coverage: none
+#       - uses: shivammathur/setup-php@v2
+#         with:
+#           php-version: '8.1'
+#           coverage: none
 
       - run: /usr/local/bin/node -v
 
       # Install Flex as a global dependency to enable usage of extra.symfony.require
       # while keeping Flex recipes from applying
-      - run: composer global require --no-scripts symfony/flex
+#       - run: composer global require --no-scripts symfony/flex
 
-      - run: composer config extra.symfony.require ~5.4.0
+#       - run: composer config extra.symfony.require ~5.4.0
 
-      - run: composer update --prefer-dist
-#       - run: yarn upgrade node-sass@4.14.1
-      - run: |
-          npm install -g node-gyp
-          npm install # yarn install
+#       - run: composer update --prefer-dist
+      - run: yarn install
 
       - run: npm run ${{ matrix.script }} # yarn run ${{ matrix.script }}
