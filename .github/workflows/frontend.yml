@@ -33,7 +33,7 @@ jobs:
       - run: composer config extra.symfony.require ~5.4.0
 
       - run: composer update --prefer-dist
-      - run: yarn upgrade node-sass@4.14.1
+#       - run: yarn upgrade node-sass@4.14.1
       - run: yarn install
 
       - run: yarn run ${{ matrix.script }}
